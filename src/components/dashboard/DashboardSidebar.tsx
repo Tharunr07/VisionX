@@ -1,13 +1,12 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Users, 
-  Plane, 
-  MapPin, 
-  BarChart3, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Users,
+  Plane,
+  MapPin,
+  BarChart3,
+  Settings,
   LogOut,
-  Globe,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
@@ -16,6 +15,7 @@ import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import logo from '@/asset/logo.jpeg';
 
 const navItems = [
   { path: '/dashboard', label: 'Overview', icon: LayoutDashboard },
@@ -64,9 +64,7 @@ export function DashboardSidebar() {
         "flex items-center gap-3 px-6 py-6 border-b border-sidebar-border",
         collapsed && "justify-center px-4"
       )}>
-        <div className="h-10 w-10 rounded-xl gradient-primary flex items-center justify-center shadow-glow">
-          <Globe className="h-5 w-5 text-primary-foreground" />
-        </div>
+        <img src={logo} alt="CO TRAVEL Logo" className="h-10 w-10 rounded-full object-cover" />
         {!collapsed && (
           <div className="flex flex-col">
             <span className="font-bold text-lg text-sidebar-accent-foreground tracking-tight">

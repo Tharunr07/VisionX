@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Globe, Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import logo from '@/asset/logo.jpeg';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -59,9 +60,7 @@ export default function LoginPage() {
         <div className="absolute bottom-32 right-20 w-48 h-48 rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         
         <div className="relative z-10 flex flex-col items-center justify-center w-full px-12">
-          <div className="h-20 w-20 rounded-2xl gradient-primary flex items-center justify-center shadow-glow mb-8">
-            <Globe className="h-10 w-10 text-primary-foreground" />
-          </div>
+          <img src={logo} alt="CO TRAVEL Logo" className="h-20 w-20 rounded-full object-cover mb-8" />
           <h1 className="text-4xl font-bold text-sidebar-accent-foreground mb-4 text-center">
             CO TRAVEL
           </h1>
@@ -91,9 +90,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md animate-fade-in">
           {/* Mobile Logo */}
           <div className="lg:hidden flex items-center justify-center gap-3 mb-12">
-            <div className="h-12 w-12 rounded-xl gradient-primary flex items-center justify-center shadow-glow">
-              <Globe className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="CO TRAVEL Logo" className="h-12 w-12 rounded-full object-cover" />
             <span className="font-bold text-2xl text-foreground">CO TRAVEL</span>
           </div>
 
