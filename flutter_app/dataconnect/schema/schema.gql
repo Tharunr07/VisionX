@@ -1,0 +1,45 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  bio: String
+}
+
+type Trip @table {
+  name: String!
+  startDate: Date!
+  endDate: Date!
+  isPublic: Boolean!
+  createdAt: Timestamp!
+  description: String
+  coverImageUrl: String
+  user: User!
+}
+
+type Location @table {
+  name: String!
+  latitude: Float!
+  longitude: Float!
+  isPublic: Boolean!
+  createdAt: Timestamp!
+  description: String
+  address: String
+  trip: Trip!
+}
+
+type Photo @table {
+  imageUrl: String!
+  createdAt: Timestamp!
+  caption: String
+  location: Location!
+}
+
+type Comment @table {
+  text: String!
+  createdAt: Timestamp!
+  editedAt: Timestamp
+  user: User!
+  trip: Trip
+  location: Location
+}
